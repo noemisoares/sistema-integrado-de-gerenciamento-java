@@ -1,77 +1,203 @@
-# Sistemas de Gerenciamento Integrados: Clínica Médica, Eventos e Restaurante 
+<p align="center">
+  <strong>
+    Português
+    &nbsp;|&nbsp;
+    <a href="./README.en.md">English</a>
+  </strong>
+</p>
 
-### Integrantes do Projeto: Nunno Wakiyama Diniz Carvaho, Pedro Henrique Mendes Macedo, Ricardo Nery de Brito Junior, Matheus Fabiano Barbosa Aguiar e Noemi Soares Gonçalves da Silva
+# Sistemas de Gerenciamento Integrados: Clínica Médica, Eventos e Restaurante
 
-Neste projeto, desenvolvemos uma aplicação em Java que simula sistemas de gerenciamento em três contextos distintos: uma clínica médica, um sistema de eventos e um restaurante. O objetivo é aplicar conceitos de programação orientada a objetos, demonstrando nossa compreensão e habilidade na manipulação de objetos e na implementação de funcionalidades práticas.
+## 📌 Descrição do Projeto
 
-Na clínica médica, criamos um sistema que permite agendar consultas, gerenciar informações de pacientes e médicos, e gerar relatórios de atendimentos. Para o sistema de eventos, abordamos a criação de um ambiente que facilita o cadastro de eventos e a inscrição de participantes, além de permitir o controle da lotação dos eventos. No contexto do restaurante, implementamos um sistema de gerenciamento de pedidos, que possibilita registrar pedidos, calcular o total a pagar e gerenciar a ocupação das mesas.
+Este projeto consiste no desenvolvimento de uma aplicação em **Java**, baseada nos princípios da **Programação Orientada a Objetos (POO)**, que simula **três sistemas de gerenciamento distintos**, integrados em um único sistema:
 
-Este projeto também inclui a integração entre os sistemas, utilizando métodos que apoiam a tomada de decisões estratégicas. Elaboramos seis perguntas que podem ser respondidas por meio dos dados gerados pelos sistemas. Essas perguntas são fundamentais para auxiliar na análise de desempenho e na definição de estratégias.
+- 🏥 Clínica Médica  
+- 🎟️ Sistema de Eventos  
+- 🍽️ Restaurante  
 
-A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada um dos sistemas.
+O objetivo principal é aplicar conceitos fundamentais de POO, como **encapsulamento, abstração, modularização e reutilização de código**, além de demonstrar a integração entre diferentes domínios de negócio para **apoio à tomada de decisões estratégicas**.
 
-### Case 1: Sistema de Gerenciamento Clínica Médica - Nunno Wakiyama e Pedro Henrique
+---
 
-O sistema de gerenciamento de clínicas médicas, desenvolvido em Java, tem como objetivo principal a criação e administração de consultas médicas, com base nos médicos e pacientes cadastrados. Além disso, o sistema incorpora funcionalidades que visam aprimorar a usabilidade, tais como a identificação do médico mais requisitado e a consulta das datas e horários já ocupados por um médico específico. Para tanto, os usuários têm a capacidade de inserir novos médicos e pacientes, bem como agendar novas consultas. 
+## 👥 Integrantes do Projeto
 
-A classe nomeada de `Clínica` é a principal do sistema, por isso também recebe o seu nome. Seus atributos são justamente `arraylists` de cada uma das 3 classes `Medico`, `Consulta` e `Paciente`. Ademais, é a responsável por realizar todas as operações de gerenciamento citadas no primeiro texto, possuindo a declaração de todas as funções, como: `adicionarConsulta()`, `adicionarMedico()`, `adicionarPaciente()`, `criarPaciente()`, `criarMedico()`, `criarConsulta()`, `exibirDadosConsulta()`, `exibirDadosMedico()` e `exibirDadosPaciente()`. Essas são as funções responsáveis por gerir os dados dos arrays de cada classe, mas a `Clinica` possui funções auxiliares que ajudam na tomada de decisão, essas são: `dataHorariosDeUmMedico()` e `medicoMaisSolicitado()`. 
+- Nunno Wakiyama Diniz Carvalho  
+- Pedro Henrique Mendes Macedo  
+- Ricardo Nery de Brito Junior  
+- Matheus Fabiano Barbosa Aguiar  
+- **Noemi Soares Gonçalves da Silva**
 
-A classe `Paciente` é responsável por armazenar todas as informações necessárias de um paciente que será cadastrado em um sistema. Os atributos que compõem essa classe são: o nome do paciente `String nomePaciente`, a idade do paciente `int idade`, o sintoma apresentado pelo paciente `String sintoma`, um indicador boolean  `boolean planoSaude`, o número de contato `String numeroContato`, e o tipo sanguíneo do paciente `String tipoSanguineo`. A classe também possui um construtor, responsável por inicializar os atributos mencionados quando uma nova instância de `Paciente` é criada. Além disso, a classe disponibiliza métodos do tipo `getter` e `setter`, que permitem acessar e alterar os valores dos atributos de maneira controlada e segura. Por fim, a classe implementa uma função chamada `temPlanoSaude()`, que exibe uma mensagem de acordo com a situação do paciente em relação ao plano de saúde. 
+---
 
-A classe `Medico` é responsável por armazenar todas as informações necessárias de um médico que será cadastrado em um sistema. Os atributos que compõem essa classe são: o nome do médico `String nomeMedico`, um indicador booleano `boolean disponibilidade`, a especialização do médico `String especializacao`, o número de CRM do profissional `int crm`, e um contador de consultas `int numeroDeConsultas`. A classe também possui um construtor, responsável por inicializar os atributos mencionados quando uma nova instância de `Medico` é criada. Além disso, a classe disponibiliza métodos do tipo `getter` e `setter`, que permitem acessar e alterar os valores dos atributos de maneira controlada e segura. Por fim, a classe implementa duas funções, a primeira delas se chama `estaDisponivel()`, que exibe uma mensagem de acordo com a situação do médico em relação a disponibilidade, já a segunda adiciona mais um ao contador de consultas de um médico, recebendo o nome de `incrementarContadorDeConsultas()`. 
+## 🎯 Objetivos
 
-A classe `Consulta` é responsável por armazenar todas as informações necessárias de uma consulta que será adicionada em um sistema. Os atributos que compõem essa classe são: a data da consulta `String data`, o horário da consulta `String horario`, um indicador boolean `boolean prioridade`, um médico cadastrado `Medico medico`, e um paciente cadastrado `Paciente paciente`. A classe também possui um construtor, responsável por inicializar os atributos mencionados quando uma nova instância de `Consulta` é criada. Além disso, a classe disponibiliza métodos do tipo `getter` e `setter`, que permitem acessar e alterar os valores dos atributos de maneira controlada e segura. Por fim, a classe implementa uma função chamada `possivelPrioridade()`, que exibe uma mensagem de acordo com a situação do paciente em relação ao plano de saúde. 
+- Aplicar conceitos de Programação Orientada a Objetos em Java  
+- Desenvolver sistemas independentes e integrados  
+- Simular cenários reais de gestão (saúde, eventos e alimentação)  
+- Utilizar dados para responder perguntas estratégicas  
+- Desenvolver um sistema modular, extensível e organizado  
 
-### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
+---
 
-O sistema de gerenciamento de eventos e projetado para oferecer um sistema de gerenciamento pratico para controle e automação do serviço,oferecendo as seguintes funcionalidades de sistema: inscrição de participantes,manejamento de eventos e atraçãoes,e manejamento do local do evento.
+## 🛠️ Tecnologias Utilizadas
 
-A classe `Evento` centraliza a lógica de gerenciamento do evento, controlando os participantes, a lotação e as atrações. Ela mantém um registro do nome do evento, data, local (referenciado por uma instância da classe Local), a capacidade máxima de participantes e uma lista de Participantes. Entre seus métodos, destaca-se o registrarParticipante, que adiciona um participante ao evento se ainda houver vagas disponíveis, evitando inscrições quando a capacidade máxima é atingida. O método verificarLotacao confirma se o número máximo de participantes já foi alcançado, e o gerarRelatorio produz um relatório detalhado sobre o evento, incluindo o local, data e lista de participantes, oferecendo uma visão geral da situação do evento.
+- **Java**
+- **Programação Orientada a Objetos**
+- **Scanner (entrada de dados via terminal)**
+- **Collections (ArrayList)**
+- **Estruturas de controle e menus interativos**
 
-A classe `Local` gerencia as informações sobre o local onde o evento será realizado, com dois atributos principais: nomeLocal e endereco. Os métodos getter fornecem acesso a essas informações, e a sobrescrita de toString() organiza os dados para exibição no formato "nomeLocal (endereço)", tornando mais fácil a identificação e manipulação dos locais do evento.
+---
 
-O programa principal, representado pela classe `main_event`, atua como a interface interativa do sistema, utilizando a classe Scanner para capturar entradas do usuário e executar operações de gerenciamento do evento. As funcionalidades principais estão organizadas em três áreas: gerenciamento do evento, gerenciamento de participantes e gerenciamento do local. No gerenciamento do evento, o usuário pode adicionar e remover atrações, além de gerar relatórios sobre o evento e suas atrações, com a limitação de adicionar atrações até um número máximo. O gerenciamento de participantes facilita o registro de novos inscritos, com verificações automáticas da capacidade máxima do evento. Cada participante é registrado com nome, idade, tipo de entrada (meia ou inteira), e os dias em que estará presente no evento. No gerenciamento do local, o usuário pode alterar o local do evento, verificar a lotação e ajustar o limite de participantes permitidos.
+## 🧩 Estrutura do Sistema
 
-Esse sistema de gerenciamento de eventos em Java foi desenvolvido de forma modular e eficiente. A separação clara das responsabilidades de cada classe e o uso de métodos específicos para cada funcionalidade permitem uma operação fluida e precisa. Além disso, o design do sistema é flexível, permitindo a adição de novas funcionalidades, como a criação de novos tipos de relatórios ou melhorias na interface do usuário. Este código é um exemplo claro da aplicação dos princípios da programação orientada a objetos, utilizando encapsulamento e abstração para organizar as funcionalidades de um sistema de gerenciamento de eventos.
+O projeto é dividido em **quatro grandes módulos**:
 
-### Case 3: Sistema de Gerenciamento de Restaurante - Noemi Soares
+1. Sistema de Gerenciamento de Clínica Médica  
+2. Sistema de Gerenciamento de Eventos  
+3. Sistema de Gerenciamento de Restaurante  
+4. Sistema Integrado (Tomada de Decisão)
 
-O sistema de gerenciamento de restaurante em Java foi projetado para oferecer uma solução para o controle de mesas, pedidos e itens do menu. A estrutura do código é dividida em várias classes, cada uma desempenhando um papel essencial no funcionamento do sistema.
+---
 
-A classe `Restaurante` é o coração do sistema, responsável por orquestrar todas as operações. Ela contém uma lista de mesas, com um total de 15 mesas disponíveis para os clientes. O método `inicializarMesas` é crucial, pois inicializa cada mesa como disponível, garantindo que a equipe do restaurante tenha um controle preciso sobre a ocupação.
+## 🏥 Case 1: Sistema de Gerenciamento de Clínica Médica
 
-Dentro da classe `Restaurante`, o método `fazerPedido` permite que um cliente faça um pedido a partir de uma mesa específica. Esse método recebe a mesa e o cliente como parâmetros, garantindo que a ordem seja registrada corretamente. Após capturar o pedido, ele utiliza o método `adicionarItem` da classe `Pedido` para incluir os itens selecionados pelo cliente. A lógica aqui assegura que o sistema não apenas registre os pedidos, mas também mantenha um histórico de todos os pedidos feitos para cada mesa.
+Este módulo permite:
 
-O método `fecharConta` é responsável por calcular o total do pedido e exibir as opções de pagamento. Ele soma o preço dos itens do pedido, oferece um resumo detalhado e verifica se o cliente deseja dividir a conta. Esta funcionalidade é essencial em ambientes de restaurante, onde os clientes frequentemente desejam compartilhar despesas.
+- Cadastro de médicos e pacientes  
+- Agendamento de consultas  
+- Verificação de horários ocupados  
+- Identificação do médico mais solicitado  
 
-A classe `Mesa` representa cada mesa do restaurante. Atribuindo um número à mesa e seu status de ocupação, essa classe fornece uma interface simples para gerenciar a disponibilidade. Os métodos da classe incluem `reservar` e `liberar`, que alteram o status da mesa. Essa estrutura permite que os atendentes consultem rapidamente a disponibilidade das mesas e façam reservas de forma eficiente.
+### Principais Classes
 
-A classe `ItemDoPedido` é responsável por representar os itens que estão disponíveis no menu. Cada instância desta classe contém informações detalhadas sobre um item, como nome, preço e tamanho (porção). Este design modular facilita a adição de novos itens ao menu e permite uma apresentação clara e organizada dos pratos oferecidos. Os itens podem ser adicionados a um pedido de forma flexível, pois o sistema permite que os atendentes selecionem e ajustem os pedidos conforme necessário.
+- **Clinica**  
+  - Classe central do sistema  
+  - Gerencia médicos, pacientes e consultas  
+  - Métodos principais:
+    - `adicionarMedico()`
+    - `adicionarPaciente()`
+    - `adicionarConsulta()`
+    - `medicoMaisSolicitado()`
+    - `dataHorariosDeUmMedico()`
 
-A classe `Pedido` é uma das partes mais importantes do sistema, pois é onde os detalhes dos pedidos são gerenciados. Esta classe permite que os atendentes adicionem e removam itens do pedido, além de calcular o total de cada pedido. O método `adicionarItem` facilita a inclusão de um novo item ao pedido, enquanto `removerItem` permite cancelar um item, assegurando que o pedido possa ser ajustado conforme as solicitações do cliente. 
+- **Paciente**
+  - Armazena dados como nome, idade, sintomas, plano de saúde e tipo sanguíneo
+  - Métodos getters e setters
+  - Método `temPlanoSaude()`
 
-Adicionalmente, o método `calcularTotal` fornece uma soma detalhada dos itens do pedido, permitindo que os atendentes apresentem uma conta precisa aos clientes. A lógica contida nesta classe é vital para garantir que os pedidos sejam manipulados de forma clara e precisa.
+- **Medico**
+  - Informações como nome, especialização, CRM e disponibilidade
+  - Controle do número de consultas
+  - Métodos:
+    - `estaDisponivel()`
+    - `incrementarContadorDeConsultas()`
 
-A interação com o usuário é facilitada através de um menu de opções que orienta os atendentes nas operações a serem realizadas. O uso da classe `Scanner` permite a captura de entradas do usuário de maneira eficiente e intuitiva. Ao iniciar o sistema, o usuário é apresentado a um menu com opções como fazer um pedido, fechar a conta ou consultar a disponibilidade das mesas, proporcionando uma experiência fluida e acessível.
+- **Consulta**
+  - Relaciona médico e paciente
+  - Armazena data, horário e prioridade
+  - Método `possivelPrioridade()`
 
-O sistema de gerenciamento de restaurante em Java é uma implementação que abrange todas as facetas da operação de um restaurante. Cada classe foi projetada para desempenhar funções específicas, colaborando de maneira eficiente para manter o fluxo de informações e operações. A modularidade e a flexibilidade do código permitem futuras expansões, como a inclusão de um sistema de gerenciamento de estoque ou um painel administrativo para análise de dados de vendas e ocupação. A estrutura do código não apenas facilita o uso diário, mas também serve como uma base sólida para melhorias e atualizações futuras no sistema.
+---
 
-### Case 4: Integração dos Sistemas de Gerenciamentos
+## 🎟️ Case 2: Sistema de Gerenciamento de Eventos
 
-O código refere-se à implementação de um sistema integrado que gerencia três serviços distintos: restaurante, eventos e clínica. Essa estrutura permite que um usuário interaja com diferentes módulos através de um menu principal, facilitando o gerenciamento e o acesso a informações relevantes. Vamos explicar as principais partes do código e suas funcionalidades.
+Este sistema é responsável por:
 
-A classe `SistemaIntegrado` é o núcleo do sistema, onde são instanciados objetos das classes `Restaurante`, `Clinica` e uma lista de eventos `Eventos`. O construtor inicializa essas entidades, preparando o sistema para uso. O método `exibirMenuPrincipal` é responsável por apresentar ao usuário as opções disponíveis. Um loop while mantém o menu ativo até que o usuário escolha sair. As opções incluem acessar o restaurante, gerenciar eventos, acessar a clínica, responder a perguntas de tomada de decisão ou sair do programa.
+- Cadastro e gerenciamento de eventos  
+- Inscrição de participantes  
+- Controle de lotação  
+- Geração de relatórios  
 
-**Gerenciamento de Restaurante:** Essa parte do sistema permite gerenciar todas as operações de um restaurante, desde a exibição do cardápio até a geração de relatórios financeiros. É possível realizar pedidos, fechar contas, verificar o status de pedidos e gerar relatórios detalhados sobre as vendas.
+### Principais Classes
 
-**Gerenciamento de Eventos:** O sistema permite criar eventos, registrar participantes, gerar relatórios sobre os eventos e identificar quais eventos foram os mais populares e rentáveis. Essa funcionalidade é útil para organizadores de eventos que desejam ter um controle mais preciso sobre seus eventos.
+- **Evento**
+  - Gerencia participantes, atrações e capacidade
+  - Métodos:
+    - `registrarParticipante()`
+    - `verificarLotacao()`
+    - `gerarRelatorio()`
 
-**Gerenciamento de Clínica:** Nesta parte, o sistema permite cadastrar médicos e pacientes, agendar consultas, gerar relatórios sobre as consultas e identificar os médicos mais solicitados. Essa funcionalidade é ideal para clínicas que desejam otimizar a gestão de seus agendamentos e recursos.
+- **Local**
+  - Representa o local do evento
+  - Atributos: nome e endereço
+  - Sobrescrita do método `toString()`
 
-**Tomada de Decisões:** Além das funcionalidades básicas de cada módulo, o sistema também oferece uma série de perguntas que permitem extrair informações importantes sobre o desempenho do sistema. Por exemplo, é possível identificar qual o prato mais pedido em um restaurante, qual evento gerou mais receita ou qual médico foi mais procurado.
+- **main_event**
+  - Interface interativa via terminal
+  - Gerencia eventos, participantes e locais
+  - Uso intensivo de menus e validações
 
-Em resumo, o código apresentado oferece uma solução completa e flexível para gerenciar diferentes tipos de negócios. Sua estrutura modular e suas funcionalidades o tornam uma ferramenta importante para o projeto que buscam otimizar seus processos e tomar decisões mais assertivas.
+---
 
-### Conclusão
+## 🍽️ Case 3: Sistema de Gerenciamento de Restaurante
 
-O projeto de Programação Orientada a Objetos resultou na criação de um sistema completo e eficiente, utilizando Java como linguagem de programação para gerenciar a aplicação. A equipe desenvolveu classes enquanto iamos implementando funcionalidades como agendamento de consultas, registro de participantes em eventos e gerenciamento de pedidos. Através da utilização de padrões de projeto, foi possível organizar o código de forma clara. Um dos maiores desafios foi a integração dos diferentes módulos, que foi superada com o uso de interfaces, assim podendo desenvolver a Tomada de Decisão. O sistema finalizado possui uma interface intuitiva, que permite aos usuários interagir com o sistema de forma fácil e eficiente.
+Sistema voltado para o controle completo de um restaurante:
+
+- Gerenciamento de mesas
+- Registro de pedidos
+- Controle de itens do cardápio
+- Cálculo e fechamento de contas
+
+### Principais Classes
+
+- **Restaurante**
+  - Classe central
+  - Gerencia até 15 mesas
+  - Métodos:
+    - `inicializarMesas()`
+    - `fazerPedido()`
+    - `fecharConta()`
+
+- **Mesa**
+  - Representa mesas do restaurante
+  - Métodos:
+    - `reservar()`
+    - `liberar()`
+
+- **ItemDoPedido**
+  - Representa itens do cardápio
+  - Atributos: nome, preço e tamanho
+
+- **Pedido**
+  - Gerencia itens pedidos
+  - Métodos:
+    - `adicionarItem()`
+    - `removerItem()`
+    - `calcularTotal()`
+
+---
+
+## 🔗 Case 4: Integração dos Sistemas
+
+A classe **SistemaIntegrado** conecta os três sistemas em um único menu principal, permitindo:
+
+- Acesso unificado aos módulos
+- Geração de relatórios
+- Respostas a perguntas estratégicas, como:
+  - Médico mais solicitado
+  - Evento mais popular
+  - Prato mais pedido
+
+Essa integração demonstra a aplicação prática de **abstração e reutilização de código**, além de permitir análises mais profundas com base nos dados gerados.
+
+---
+
+## 📊 Tomada de Decisão
+
+O sistema responde perguntas estratégicas baseadas nos dados dos três módulos, auxiliando na análise de desempenho e apoio à tomada de decisões gerenciais.
+
+---
+
+## 📌 Status do Projeto
+
+✅ Projeto finalizado  
+📚 Desenvolvido para fins acadêmicos  
+🧠 Mantido como material de estudo e portfólio  
+
+---
+
+## 🧾 Conclusão
+
+O projeto resultou em um sistema robusto, modular e integrado, aplicando de forma prática os conceitos de Programação Orientada a Objetos. A divisão clara de responsabilidades entre as classes e a integração entre os módulos proporcionam uma base sólida para futuras expansões, como interfaces gráficas, persistência em banco de dados ou novos módulos de negócio.
